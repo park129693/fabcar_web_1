@@ -32,9 +32,21 @@
                       <a class="nav-link " href="/changeowner">ChangEOwner</a>
                     </li>
                   </ul>
-                  <form class="form-inline my-2 my-lg-0" method="GET" action="/searchdata">
+                  <form name="myForm" onsubmit="return validateForm()" class="form-inline my-2 my-lg-0" method="GET" action="/searchdata">
                     <input class="form-control mr-sm-2" name="search"type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </form>
+                  <script>
+                  function validateForm() {
+                        var x = document.forms["myForm"]["search"].value;
+                        var dataX = x.slice(0,3)
+                        if (dataX != "CAR") {
+                          alert("CAR + 넘버의 형태로 입력해야 합니다.");
+                          return false;
+                        }
+
+                         return true;
+                        }
+                  </script>
                 </div>
               </nav>
