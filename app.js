@@ -6,6 +6,11 @@ var bodyParser = require('body-parser')
 var cors = require('cors')
 //dotenv 실행
 require('dotenv').config()
+const mongoose = require('mongoose')
+
+var pw = process.env.PASSWORD
+var url = `mongodb+srv://root:${pw}@cluster0.ze1q8.mongodb.net/MyDB_Daejeon?retryWrites=true&w=majority`
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 
 var apiRouter = require('./routes/Router')
 
