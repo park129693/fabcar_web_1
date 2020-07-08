@@ -9,7 +9,7 @@ var carSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    docTpye:{
+    docType:{
         type:String,
         required:true
     },

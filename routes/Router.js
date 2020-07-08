@@ -25,16 +25,16 @@ router.get('/savedata/:carnum', async(req, res, next)=>{
     var result = await queryUtil.queryData(searchdata)
     var resultData =  await JSON.parse(result)
 
-
+    console.log(resultData)
     res.render('savedata',{data:resultData, KEY:searchdata})
 })
 
-router.post('/savedata',(req, res, next)=>{
+router.post('/savedata', async (req, res, next)=>{
     var contact = new Car()
 
     contact.KEY = req.body.KEY
     contact.color = req.body.color
-    contact.docTpye = req.body.docTpye
+    contact.docType = req.body.docType
     contact.make = req.body.make
     contact.model = req.body.model
     contact.owner = req.body.owner
